@@ -2,46 +2,88 @@
 
 ## ℹ️ Опис проєкту
 
-[Hello GitHub Actions](https://github.com/Allaandra/skills-hello-github-actions/tree/main?tab=readme-ov-file#hello-github-actions-)  
-[Publish Packages](https://github.com/Allaandra/skills-publish-packages?tab=readme-ov-file#finish)
+Навчальний проєкт з налаштування повного CI/CD-конвеєра для фронтенд-застосунку на базі Vite + React, Docker, GitHub Actions та Azure App Service.
+
+Виконані курси:
+- [Hello GitHub Actions](https://github.com/Allaandra/skills-hello-github-actions/tree/main?tab=readme-ov-file#hello-github-actions-)
+- [Publish Packages](https://github.com/Allaandra/skills-publish-packages?tab=readme-ov-file#finish)
 
 ## 👩‍💻 Автор
 
 - Виконала: Матвєєнко Олександра  
 - Група: ІПЗ-3.03  
-- Дисципліна: "Конструювання програмного забезпечення" (КПЗ)
+- Дисципліна: «Конструювання програмного забезпечення» (КПЗ)
 
 ## 📦 Стек технологій
+
 - **Vite + React**
 - **Docker**
 - **Nginx**
 - **GitHub Actions**
 - **GitHub Container Registry (GHCR)**
+- **Microsoft Azure App Service**
 
-## Структура проекту
-```
+## 📁 Структура проєкту
+
+```bash
 .
 ├─ src/
+├─ images/
 ├─ Dockerfile
+├─ vite.config.js
+├─ package.json
 └─ .github/workflows/docker-build.yml
 ```
 
-## Запуск контейнера
-```
+## 🚀 Запуск контейнера локально
+
+```bash
 npm install
 docker pull ghcr.io/allaandra/kpz_labs_matvieienko_ci-cd:latest
 docker run -p 4173:4173 ghcr.io/allaandra/kpz_labs_matvieienko_ci-cd:latest npm run preview -- --host
 ```
 
-## Скриншоти
-Успішний запуск
+Після цього застосунок буде доступний у браузері за адресою `http://localhost:4173`.
+
+## 📸 Скриншоти
+
+### Неперервна інтеграція (CI)
+
+Успішний запуск workflow:  
 <img src="images/success_build_push.png">
-GHCR пакет
+
+Пакет у GHCR:  
 <img src="images/package.png">
-Докер контейнер
+
+Запущений Docker-контейнер:  
 <img src="images/docker.png">
-Сторінка
+
+Сторінка застосунку:  
 <img src="images/page.png">
 
-## Висновок
-У ході виконання практичної роботи я закріпила навички роботи з технологією контейнеризації Docker. Я навчилася створювати коректний Dockerfile з необхідними директивами для збірки образу Python-застосунку. Також я опанувала інструмент Docker Compose для опису та запуску багатосервісної архітектури. В результаті мною було успішно розгорнуто вебзастосунок на Flask у зв’язці з базою даних Redis, що забезпечило коректну роботу лічильника відвідувань у ізольованому середовищі.
+### Неперервна доставка (CD)
+
+Ресурсна група в Azure:  
+<img src="images/resources.png">
+
+Web App:  
+<img src="images/web_app.png">
+
+App Service:  
+<img src="images/app_service.png">
+
+Сторінка, розгорнута на Azure:  
+<img src="images/azure_page.png">
+
+## ✅ Результати та висновки
+
+У ході виконання циклу практичних робіт я опанувала сучасні підходи до контейнеризації та автоматизації розгортання програмного забезпечення (CI/CD).
+
+Основні здобутки:
+
+- Закріпила навички роботи з **Docker**: навчилася писати оптимізовані `Dockerfile` для Node.js/React.
+- Налаштувала workflow у **GitHub Actions**, який реалізує:
+	- **Continuous Integration (CI)**: автоматичну збірку Docker-образу при оновленні коду та публікацію в **GitHub Container Registry (GHCR)**.
+	- **Continuous Delivery (CD)**: автоматичне розгортання застосунку в **Microsoft Azure App Service** з використанням секретів для безпечної авторизації.
+
+У результаті було побудовано повноцінний конвеєр розробки, де зміни в коді автоматично проходять етапи збірки та деплою й стають доступними кінцевому користувачу без ручного втручання.

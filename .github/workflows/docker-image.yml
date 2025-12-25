@@ -48,3 +48,17 @@ jobs:
           tags: |
             ghcr.io/${{ env.REPO_LC }}:latest
             ghcr.io/${{ env.REPO_LC }}:sha-${{ github.sha }}
+      
+      # Деплой на Azure
+      - name: Login to Azure
+        uses: azure/login@v2
+        continue-on-error: true
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name: Deploy to Azure Web App
+        uses: azure/webapps-deploy@v2
+        continue-on-error: true
+        with:
+          app-name: Allaandra-KPZ-App
+          images: ghcr.io/${{ env.REPO_LC }}:latest
