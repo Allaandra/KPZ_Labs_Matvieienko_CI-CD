@@ -28,6 +28,7 @@
 
 ## Запуск контейнера
 ```
+npm install
 docker pull ghcr.io/allaandra/kpz_labs_matvieienko_ci-cd:latest
 docker run -p 4173:4173 ghcr.io/allaandra/kpz_labs_matvieienko_ci-cd:latest npm run preview -- --host
 ```
