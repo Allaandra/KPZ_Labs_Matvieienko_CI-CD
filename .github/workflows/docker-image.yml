@@ -33,6 +33,12 @@ jobs:
           username: "${{ github.actor }}"
           password: "${{ secrets.GITHUB_TOKEN }}"
 
+      - name: Lowercase Repo Name
+        run: |
+          echo "REPO_LC=${GITHUB_REPOSITORY,,}" >> ${GITHUB_ENV}
+        env:
+          GITHUB_REPOSITORY: ${{ github.repository }}
+
       # Собираем и отправляем докер образ
       - name: Build and push Docker image
         uses: docker/build-push-action@v6
@@ -40,5 +46,5 @@ jobs:
           context: .
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}:latest
-            ghcr.io/${{ github.repository }}:sha-${{ github.sha }}
+            ghcr.io/${{ env.REPO_LC }}:latest
+            ghcr.io/${{ env.REPO_LC }}:sha-${{ github.sha }}

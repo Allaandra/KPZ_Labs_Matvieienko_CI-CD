@@ -1,16 +1,19 @@
-# React + Vite
+# KPZ_Labs_Matvieienko_CI-CD
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ℹ️ Опис проєкту
 
-Currently, two official plugins are available:
+[Hello GitHub Actions](https://github.com/Allaandra/skills-hello-github-actions/tree/main?tab=readme-ov-file#hello-github-actions-)  
+[Publish Packages](https://github.com/Allaandra/skills-publish-packages?tab=readme-ov-file#finish)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 👩‍💻 Автор
 
-## React Compiler
+- Виконала: Матвєєнко Олександра  
+- Група: ІПЗ-3.03  
+- Дисципліна: "Конструювання програмного забезпечення" (КПЗ)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 📦 Стек технологій
+- **Vite + React**
+- **Docker**
+- **Nginx**
+- **GitHub Actions**
+- **GitHub Container Registry (GHCR)**
