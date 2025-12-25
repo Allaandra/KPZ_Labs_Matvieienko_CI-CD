@@ -17,3 +17,30 @@
 - **Nginx**
 - **GitHub Actions**
 - **GitHub Container Registry (GHCR)**
+
+## Структура проекту
+```
+.
+├─ src/
+├─ Dockerfile
+└─ .github/workflows/docker-build.yml
+```
+
+## Запуск контейнера
+```
+docker pull ghcr.io/allaandra/kpz_labs_matvieienko_ci-cd:latest
+docker run -p 4173:4173 ghcr.io/allaandra/kpz_labs_matvieienko_ci-cd:latest npm run preview -- --host
+```
+
+## Скриншоти
+Успішний запуск
+<img src="images/success_build_push.png">
+GHCR пакет
+<img src="images/package.png">
+Докер контейнер
+<img src="images/docker.png">
+Сторінка
+<img src="images/page.png">
+
+## Висновок
+У ході виконання практичної роботи я закріпила навички роботи з технологією контейнеризації Docker. Я навчилася створювати коректний Dockerfile з необхідними директивами для збірки образу Python-застосунку. Також я опанувала інструмент Docker Compose для опису та запуску багатосервісної архітектури. В результаті мною було успішно розгорнуто вебзастосунок на Flask у зв’язці з базою даних Redis, що забезпечило коректну роботу лічильника відвідувань у ізольованому середовищі.
